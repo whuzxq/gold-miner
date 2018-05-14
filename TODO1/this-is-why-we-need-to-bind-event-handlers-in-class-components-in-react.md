@@ -3,15 +3,15 @@
 > * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
 > * 本文永久链接：[https://github.com/xitu/gold-miner/blob/master/TODO1/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react.md](https://github.com/xitu/gold-miner/blob/master/TODO1/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react.md)
 > * 译者：[whuzxq](https://github.com/whuzxq)
-> * 校对者：
+> * 校对者：[sunhaokk](https://github.com/sunhaokk)
 
-# 这就是为什么我们需要在 React 的类组件中为事件处理程序绑定 this
+# 为什么需要在 React 类组件中为事件处理程序绑定 this
 
 ![](https://cdn-images-1.medium.com/max/2000/1*kdZr8L9pUOgosVNWqMSmlQ.png)
 
 背景图源来自 [Kaley Dykstra](https://unsplash.com/photos/gtVrejEGdmM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) 并发布在 [Unsplash](https://unsplash.com/search/photos/chain?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) 上，源代码图像生成自 [carbon.now.sh](https://carbon.now.sh)。
 
-在使用 React 时，你难免会和组件和事件处理程序打交道。在自定义组件的构造函数中，我们需要使用 `.bind()` 来将方法绑定到组件实例上面。
+在使用 React 时，您难免遇到受控组件和事件处理程序。在自定义组件的构造函数中，我们需要使用 `.bind()` 来将方法绑定到组件实例上面。
 
 ```
 class Foo extends React.Component{
@@ -46,7 +46,7 @@ ReactDOM.render(
 
 ### **应责怪 JavaScript，而不是 React**
 
-好吧，责怪听起来有些苛刻。如果按照 React 和 JSX 的语法，我们并不需要这么做。其实绑定 `this` 是 JavaScript 中的语法。 
+好吧，责怪听起来有些苛刻。如果按照 React 和 JSX 的语法，我们并不需要这么做。其实绑定 `this` 是 JavaScript 中的语法。
 
 让我们看看，如果不将事件处理程序绑定到组件实例上，会发生什么：
 
